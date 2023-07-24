@@ -1,2 +1,2 @@
 # Dev_108_RPSLS
-Rock_Paper_Scissors console game simulator
+Console game Rock paper scissors lizard smock simulater. Player vs Computer and vs another Player.
