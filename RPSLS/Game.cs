@@ -32,11 +32,33 @@ namespace RPSLS
             Console.WriteLine("Lizard eats Paper");
             Console.WriteLine("Spock smashes Scissors");
             Console.WriteLine("Spock vaporizes Rock");
+
+            Console.WriteLine("\nGame will be best out of 3");
         }
 
         public int ChooseNumberOfHumanPlayers()
         {
-            return 0;
+            string userInput;
+            Console.WriteLine("\nHow many players are playing:?");
+            Console.WriteLine("Press 1 or 2");
+
+            while (true)
+            {
+                userInput = Console.ReadLine();
+
+                if (userInput == "1")
+                {
+                    return 1;
+                }
+                if (userInput == "2")
+                {
+                    return 2;
+                }
+                else
+                {
+                    Console.WriteLine("\nWrong input. Choose between 1 or 2");
+                }
+            }  
         }
 
         public void CreatePlayerObjects(int numberOfHumanPlayers)
@@ -57,6 +79,7 @@ namespace RPSLS
         public void RunGame()
         {
             WelcomeMessage();
+            ChooseNumberOfHumanPlayers();
         }
     }
 }
