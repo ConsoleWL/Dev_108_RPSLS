@@ -14,7 +14,7 @@ namespace RPSLS
         }
         public override void ChooseGesture()
         {
-            Console.WriteLine($"{name}, here are your options: ");
+            Console.WriteLine($"\n{name}, chooses an options: ");
 
             while (true)
             {

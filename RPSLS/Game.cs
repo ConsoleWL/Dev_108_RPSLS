@@ -73,7 +73,7 @@ namespace RPSLS
             if(numberOfHumanPlayers == 2)
             {
                 playerOne = new HumanPlayer("Nikita");
-                playerTwo = new HumanPlayer("Computer");
+                playerTwo = new HumanPlayer("Michael");
             }
             
         }
@@ -81,35 +81,113 @@ namespace RPSLS
         public void CompareGestures()
         {
             
-            while (playerOne.score == 3 || playerTwo.score == 3)
+            while (playerOne.score < 2 && playerTwo.score < 2)
             {
                 playerOne.ChooseGesture();
                 playerTwo.ChooseGesture();
 
-                if(playerOne.chosenGesture == "rock" || playerTwo.chosenGesture == "rock")
-                {
-                    Console.WriteLine("Tied, Try again");
-                }
-                else if(playerOne.chosenGesture == "paper" || playerTwo.chosenGesture == "paper")
-                {
-                    Console.WriteLine("Tied, Try again");
-                }
-                else if (playerOne.chosenGesture == "scissors" || playerTwo.chosenGesture == "scissors")
-                {
-                    Console.WriteLine("Tied, Try again");
-                }
-                else if (playerOne.chosenGesture == "lizard" || playerTwo.chosenGesture == "lizard")
-                {
-                    Console.WriteLine("Tied, Try again");
-                }
-                else if (playerOne.chosenGesture == "Spock" || playerTwo.chosenGesture == "Spock")
-                {
-                    Console.WriteLine("Tied, Try again");
-                }
-                else if(playerOne.chosenGesture == "rock" && playerTwo.chosenGesture == "rock")
+                Console.WriteLine();
 
+                // logic for ties
+                if (playerOne.chosenGesture == "rock" && playerTwo.chosenGesture == "rock")
+                {
+                    Console.WriteLine("Tied, Try again");
+                    Console.WriteLine($"{playerOne.name} score {playerOne.score} | {playerTwo.name} score {playerTwo.score} ");
+                }
+                else if (playerOne.chosenGesture == "paper" && playerTwo.chosenGesture == "paper")
+                {
+                    Console.WriteLine("Tied, Try again");
+                    Console.WriteLine($"{playerOne.name} score {playerOne.score} | {playerTwo.name} score {playerTwo.score} ");
+                }
+                else if (playerOne.chosenGesture == "scissors" && playerTwo.chosenGesture == "scissors")
+                {
+                    Console.WriteLine("Tied, Try again");
+                    Console.WriteLine($"{playerOne.name} score {playerOne.score} | {playerTwo.name} score {playerTwo.score} ");
+                }
+                else if (playerOne.chosenGesture == "lizard" && playerTwo.chosenGesture == "lizard")
+                {
+                    Console.WriteLine("Tied, Try again");
+                    Console.WriteLine($"{playerOne.name} score {playerOne.score} | {playerTwo.name} score {playerTwo.score} ");
+                }
+                else if (playerOne.chosenGesture == "Spock" && playerTwo.chosenGesture == "Spock")
+                {
+                    Console.WriteLine("Tied, Try again");
+                    Console.WriteLine($"{playerOne.name} score {playerOne.score} | {playerTwo.name} score {playerTwo.score} ");
+                }
+                //logic for rock
+                else if (playerOne.chosenGesture == "rock" && playerTwo.chosenGesture == "scissors")
+                {
+                    playerOne.score++;
+                    Console.WriteLine($"{playerOne.name} wins the round");
+                    Console.WriteLine($"{playerOne.name} score {playerOne.score} | {playerTwo.name} score {playerTwo.score} ");
+                }
+                else if (playerOne.chosenGesture == "rock" && playerTwo.chosenGesture == "lizard")
+                {
+                    playerOne.score++;
+                    Console.WriteLine($"{playerOne.name} wins the round");
+                    Console.WriteLine($"{playerOne.name} score {playerOne.score} | {playerTwo.name} score {playerTwo.score} ");
+                }
+                // logic for paper
+                else if (playerOne.chosenGesture == "paper" && playerTwo.chosenGesture == "rock")
+                {
+                    playerOne.score++;
+                    Console.WriteLine($"{playerOne.name} wins the round");
+                    Console.WriteLine($"{playerOne.name} score {playerOne.score} | {playerTwo.name} score {playerTwo.score} ");
+                }
+                else if (playerOne.chosenGesture == "paper" && playerTwo.chosenGesture == "Spock")
+                {
+                    playerOne.score++;
+                    Console.WriteLine($"{playerOne.name} wins the round");
+                    Console.WriteLine($"{playerOne.name} score {playerOne.score} | {playerTwo.name} score {playerTwo.score} ");
+                }
+                //logic for scissors
+                else if (playerOne.chosenGesture == "scissors" && playerTwo.chosenGesture == "paper")
+                {
+                    playerOne.score++;
+                    Console.WriteLine($"{playerOne.name} wins the round");
+                    Console.WriteLine($"{playerOne.name} score {playerOne.score} | {playerTwo.name} score {playerTwo.score} ");
+                }
+                else if (playerOne.chosenGesture == "scissors" && playerTwo.chosenGesture == "lizard")
+                {
+                    playerOne.score++;
+                    Console.WriteLine($"{playerOne.name} wins the round");
+                    Console.WriteLine($"{playerOne.name} score {playerOne.score} | {playerTwo.name} score {playerTwo.score} ");
+                }
+                //logic for lizard
+                else if (playerOne.chosenGesture == "lizard" && playerTwo.chosenGesture == "Spock")
+                {
+                    playerOne.score++;
+                    Console.WriteLine($"{playerOne.name} wins the round");
+                    Console.WriteLine($"{playerOne.name} score {playerOne.score} | {playerTwo.name} score {playerTwo.score} ");
+                }
+                else if (playerOne.chosenGesture == "lizard" && playerTwo.chosenGesture == "paper")
+                {
+                    playerOne.score++;
+                    Console.WriteLine($"{playerOne.name} wins the round");
+                    Console.WriteLine($"{playerOne.name} score {playerOne.score} | {playerTwo.name} score {playerTwo.score} ");
+                }
+                //logic for Spock
+                else if (playerOne.chosenGesture == "Spock" && playerTwo.chosenGesture == "scissors")
+                {
+                    playerOne.score++;
+                    Console.WriteLine($"{playerOne.name} wins the round");
+                    Console.WriteLine($"{playerOne.name} score {playerOne.score} | {playerTwo.name} score {playerTwo.score} ");
+                }
+                else if (playerOne.chosenGesture == "Spock" && playerTwo.chosenGesture == "rock")
+                {
+                    playerOne.score++;
+                    Console.WriteLine($"{playerOne.name} wins the round");
+                    Console.WriteLine($"{playerOne.name} score {playerOne.score} | {playerTwo.name} score {playerTwo.score} ");
+                }
+                //logic for playerTwo
+                else
+                {
+                    playerTwo.score++;
+                    Console.WriteLine($"{playerTwo.name} wins the round");
+                    Console.WriteLine($"{playerOne.name} score {playerOne.score} | {playerTwo.name} score {playerTwo.score} ");
+                }
 
-
+                Console.WriteLine("________________________________________________");
             }
         }
 
