@@ -12,6 +12,8 @@ namespace RPSLS
         public Player playerOne;
         public Player playerTwo;
 
+        int numberOfHumanPlayers;
+
         //Constructor
         public Game()
         {
@@ -63,12 +65,52 @@ namespace RPSLS
 
         public void CreatePlayerObjects(int numberOfHumanPlayers)
         {
-
+            if(numberOfHumanPlayers == 1)
+            {
+                playerOne = new HumanPlayer("Nikita");
+                playerTwo = new ComputerPlayer("Computer");
+            }
+            if(numberOfHumanPlayers == 2)
+            {
+                playerOne = new HumanPlayer("Nikita");
+                playerTwo = new HumanPlayer("Computer");
+            }
+            
         }
 
         public void CompareGestures()
         {
+            
+            while (playerOne.score == 3 || playerTwo.score == 3)
+            {
+                playerOne.ChooseGesture();
+                playerTwo.ChooseGesture();
 
+                if(playerOne.chosenGesture == "rock" || playerTwo.chosenGesture == "rock")
+                {
+                    Console.WriteLine("Tied, Try again");
+                }
+                else if(playerOne.chosenGesture == "paper" || playerTwo.chosenGesture == "paper")
+                {
+                    Console.WriteLine("Tied, Try again");
+                }
+                else if (playerOne.chosenGesture == "scissors" || playerTwo.chosenGesture == "scissors")
+                {
+                    Console.WriteLine("Tied, Try again");
+                }
+                else if (playerOne.chosenGesture == "lizard" || playerTwo.chosenGesture == "lizard")
+                {
+                    Console.WriteLine("Tied, Try again");
+                }
+                else if (playerOne.chosenGesture == "Spock" || playerTwo.chosenGesture == "Spock")
+                {
+                    Console.WriteLine("Tied, Try again");
+                }
+                else if(playerOne.chosenGesture == "rock" && playerTwo.chosenGesture == "rock")
+
+
+
+            }
         }
 
         public void DisplayGameWinner()
@@ -79,7 +121,10 @@ namespace RPSLS
         public void RunGame()
         {
             WelcomeMessage();
-            ChooseNumberOfHumanPlayers();
+            numberOfHumanPlayers = ChooseNumberOfHumanPlayers();
+            CreatePlayerObjects(numberOfHumanPlayers);
+            CompareGestures();
         }
     }
 }
+

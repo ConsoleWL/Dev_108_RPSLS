@@ -10,10 +10,12 @@ namespace RPSLS
     {
         Random rnd = new Random();
         int number;
+
         public ComputerPlayer(string name) : base(name)
         {
-            base.name = "Computer";
+            
         }
+
         public override void ChooseGesture()
         {
             number = rnd.Next(1, 6);

@@ -20,7 +20,7 @@ namespace RPSLS
             {
                 for (int i = 0; i < gestures.Count; i++)
                 {
-                    Console.WriteLine($"Press: {i + 1} for {gestures.Count}");
+                    Console.WriteLine($"Press: {i + 1} for {gestures[i]}");
                 }
                 chosenGesture = Console.ReadLine();
 
