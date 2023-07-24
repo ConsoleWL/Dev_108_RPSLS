@@ -80,7 +80,6 @@ namespace RPSLS
 
         public void CompareGestures()
         {
-            
             while (playerOne.score < 2 && playerTwo.score < 2)
             {
                 playerOne.ChooseGesture();
@@ -193,7 +192,6 @@ namespace RPSLS
 
         public void DisplayGameWinner()
         {
-            
             if (playerOne.score == 2)
             {
                 Console.WriteLine($"\nCongratulation {playerOne.name} is a winner!");
